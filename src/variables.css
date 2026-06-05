@@ -1,0 +1,23 @@
+:root {
+  /* Colors */
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-pink: #FFC2EA;
+
+  --color-green: #D7EEDD;
+  --color-yellow: #FFC250;
+  --color-purple: #934CEC;
+  --color-red: #FF7171;
+  
+  --container-width: 1440px;
+
+
+  --radius-pill: 100px;
+  --radius-lg: 24px;
+
+  /* Animation */
+
+  --transition: 0.3s ease;
+}
