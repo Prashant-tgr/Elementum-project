@@ -19,13 +19,13 @@ function Services() {
 
   return (
     <section className="services">
-      <img src={redvector} alt="" className="services-vector" />
+      <img src={redvector} alt="" className="services-vector scroll-decoration" />
       <div className="container">
         
         <h2>
 
           What we <span className="green-word"> can <br/></span> <span className="scribble-yel">
-            offer <img src={Vector_yel} alt="" className="vector-yel" /></span> you!
+            offer <img src={Vector_yel} alt="" className="vector-yel scroll-decoration" /></span> you!
         </h2>
 
         <div className="services_list">

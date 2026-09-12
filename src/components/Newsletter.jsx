@@ -5,9 +5,9 @@ import EllipsePurple from "../assets/decorations/Ellipse_purple.svg";
 function Newsletter() {
   return (
     <section className="newsletter">
-      <img src={VectorPink} className="newsletter_vector top-left" alt="" />
-      <img src={VectorPink} className="newsletter_vector top-right" alt="" />
-      <img src={EllipsePurple} className="elipse-purple" alt="" />
+      <img src={VectorPink} className="newsletter_vector top-left scroll-decoration" alt="" />
+      <img src={VectorPink} className="newsletter_vector top-right scroll-decoration" alt="" />
+      <img src={EllipsePurple} className="elipse-purple scroll-decoration" alt="" />
       <div className="container">
 
         <div className="newsletter_content">

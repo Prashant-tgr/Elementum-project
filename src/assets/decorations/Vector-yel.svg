@@ -1,3 +1,16 @@
 <svg width="595" height="56" viewBox="0 0 595 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M72.1335 3H538.634L0.133545 27H594.134L293.134 53" stroke="#FFC250" stroke-width="6"/>
+	<style>
+		path {
+			stroke-dasharray: 1;
+			stroke-dashoffset: 1;
+			animation: draw-scribble 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+		}
+
+		@keyframes draw-scribble {
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+	</style>
+	<path pathLength="1" d="M72.1335 3H538.634L0.133545 27H594.134L293.134 53" stroke="#FFC250" stroke-width="6"/>
 </svg>

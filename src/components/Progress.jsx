@@ -7,24 +7,24 @@ function Progress() {
   return (
     <section className="progress">
       <div className="container">
-        <img src={redvector} alt="" className="progress-vector" />
+        <img src={redvector} alt="" className="progress-vector scroll-decoration" />
         <div className="split-layout">
 
           <div className="image-wrapper">
               
-              <img src={triangle} alt="" className="triangle triangle-top"/>
+              <img src={triangle} alt="" className="triangle triangle-top scroll-decoration"/>
               
           <div className="progress_image">
             <img src={about2} alt="Team working together" />
           </div>
            
-              <img src={triangle} alt="Triangle decoration" className="triangle triangle-bottom" />
+              <img src={triangle} alt="Triangle decoration" className="triangle triangle-bottom scroll-decoration" />
               
           </div>
 
           <div className="progress_content">
             <h2 className="section-title">
-              <span className="green-word"> See </span> how we can help you <span className="scribble-yel">progress<img src={Vector_yel} alt="Scribble" className="vector-yel" /></span>
+              <span className="green-word"> See </span> how we can help you <span className="scribble-yel">progress<img src={Vector_yel} alt="Scribble" className="vector-yel scroll-decoration" /></span>
             </h2>
 
             <p>

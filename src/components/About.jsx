@@ -13,7 +13,7 @@ function About() {
           <div className="about_content">
 
             <h2 className="section-title">
-              <span className="scribble-yel"> Tomorrow<img src={Vector_yel} alt="" className="vector-yel" /> </span> should be better
+              <span className="scribble-yel"> Tomorrow<img src={Vector_yel} alt="" className="vector-yel scroll-decoration" /> </span> should be better
               than <span className="green-word"> today </span>
             </h2>
 
@@ -31,7 +31,7 @@ to play things safe.
           </div>
 
           <div className="image-wrapper">
-            <img className="red-shape" src={rectangle} alt="" />
+            <img className="red-shape scroll-decoration" src={rectangle} alt="" />
 
             <div className="about_image">
               <img src={about1} alt="Team meeting" />

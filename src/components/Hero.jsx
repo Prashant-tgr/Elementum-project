@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
-import Vector_yel from "../assets/decorations/Vector-yel.svg";
 import EllipsePurple from "../assets/decorations/Ellipse_purple.svg";
-
+import gsap from "gsap"
 import avatar1 from "../assets/images/hero/avatar1.png";
 import avatar2 from "../assets/images/hero/avatar2.png";
 import avatar3 from "../assets/images/hero/avatar3.png";
@@ -20,12 +19,15 @@ function Hero() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            entry.target.classList.add(
+              entry.target.classList.contains("scroll-decoration") ? "is-visible" : "show"
+            );
           }
         });
       },
       {
-        threshold: 0.2,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0,
       }
     );
 
@@ -33,8 +35,34 @@ function Hero() {
       if (avatar) observer.observe(avatar);
     });
 
+    document.querySelectorAll(".scroll-decoration").forEach((decoration) => {
+      observer.observe(decoration);
+    });
+
     return () => observer.disconnect();
   }, []);
+
+
+  useEffect(() => {
+      // GSAP timeline runs after component mounts
+      const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+
+      tl.fromTo(".pink-pill",
+        { x: "-100%" },
+        { x: "0%", duration: 2 }
+      );
+
+      tl.fromTo(".green-word",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.5, ease: "bounce.out" },
+        "-=1"
+      );
+
+      tl.fromTo(".elipse-purple-hero",
+        { rotation: 120, y: -24, opacity: 0, transformOrigin: "50% 50%" },
+        { rotation: 180, y: 0, opacity: 1, duration: 1.5, transformOrigin: "50% 50%" }
+      );
+    }, []);
 
   const avatars = [
     {
@@ -89,7 +117,7 @@ function Hero() {
 
   return (
     <section className="hero">
-      <img src={EllipsePurple} className="elipse-purple-hero" alt="" />
+      <img src={EllipsePurple} className="elipse-purple-hero scroll-decoration is-visible" alt="" />
       <div className="container">
 
         <div className="hero_content">
@@ -97,11 +125,14 @@ function Hero() {
           <h1 className="hero_title">
             
             The <span className="scribble-yel">thinkers
-             <img src={Vector_yel} alt="Scribble" className="vector-yel" />
-            </span> and 
+              <svg className="vector-yel scroll-decoration is-visible" viewBox="0 0 595 56" fill="none" aria-hidden="true">
+                <path pathLength="1" d="M72.1335 3H538.634L0.133545 27H594.134L293.134 53" stroke="#FFC250" strokeWidth="6" />
+              </svg>
+            </span>
+              and 
             <br />
-            doers were <span className="pink-pill">changing
-              </span> the <span className="green-word"> status </span> Quo with
+            doers were <span className="pink-pill-wrap">changing 
+              </span> the <span className="green-word"> status <span className="green-pill"></span> </span> Quo with
             
           </h1>
 
